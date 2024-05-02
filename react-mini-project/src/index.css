@@ -1,11 +1,12 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #b1b1be;
+  background-color: #11111d;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,16 +14,39 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  box-sizing: border-box;
+  /* Establishes consistent box-sizing model across all elements
+  i.e. including padding and border within an elements total width and height */
+  width: 100%;
+  height: 100%;
+  /* Ensures viewport is filled and helps to prevent unwanted margins or padding */
+  font-size: 90%;
+  /* Scales root font size against browser default */
 }
 
 body {
+    overflow-x: hidden;
+  /* Prevents content overflowing block-level element edges */
+}
+
+a {
+  font-weight: 500;
+  color: #b1b1be;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+a:hover {
+  color: #5DE1C0;
+}
+
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
@@ -52,7 +76,7 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 @media (prefers-color-scheme: light) {
   :root {
