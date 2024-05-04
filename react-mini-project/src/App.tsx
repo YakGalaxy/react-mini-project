@@ -6,19 +6,20 @@ import Sidebar from "./components/Sidebar.jsx";
 import Footer from "./components/Footer.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
 import ItemDetailsPage from "./pages/ItemDetailsPage.jsx";
+import AboutPage from "./pages/AboutPage.jsx"
 
 function App() {
   return (
     <>
       <Navbar />
       <Sidebar />
-      <Footer />
-      <DashboardPage />
       <Routes>
         <Route path="/" element={<DashboardPage />} />
-        <Route path="*" element={<NotFoundPage />} />
         <Route path="/task/:taskId" element={<ItemDetailsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

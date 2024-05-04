@@ -12,9 +12,7 @@ function TodoList() {
         return (
           oneTask.completed && (
             <>
-              {/* <Link to={`/task/${taskId}`}> */}
                 <li>{oneTask.task}</li>
-              {/* </Link> */}
               <button
                 onClick={() => setTask((oneTask.completed = true))}
                 className="delete-button">

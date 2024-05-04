@@ -3,9 +3,9 @@ import TodoList from '../components/TodoList'
 
 function DashboardPage() {
   return (
-    <div>
+    <>
       <TodoList /> 
-    </div>
+    </>
   )
 }
 
