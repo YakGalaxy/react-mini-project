@@ -1,0 +1,92 @@
+:root {
+  font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #b1b1be;
+  background-color: #11111d;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  /* Establishes consistent box-sizing model across all elements
+  i.e. including padding and border within an elements total width and height */
+  width: 100%;
+  height: 100%;
+  /* Ensures viewport is filled and helps to prevent unwanted margins or padding */
+  font-size: 90%;
+  /* Scales root font size against browser default */
+}
+
+body {
+    overflow-x: hidden;
+  /* Prevents content overflowing block-level element edges */
+}
+
+a {
+  font-weight: 500;
+  color: #b1b1be;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+a:hover {
+  color: #5DE1C0;
+}
+
+/* body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+} */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
