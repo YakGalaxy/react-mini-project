@@ -1,11 +1,10 @@
-import React from 'react'
-import TodoList from '../components/TodoList'
+import List from '../components/List'
 
 function DashboardPage() {
   return (
     <div className='dashboard'>
       <h1>Dashboard</h1>
-      <TodoList /> 
+      <List /> 
     </div>
   )
 }

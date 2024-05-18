@@ -2,7 +2,7 @@ import { useState } from "react";
 import tasks from "../assets/tasks.json";
 import { Link } from "react-router-dom";
 
-function TodoList() {
+function ListItem() {
   const [task, setTask] = useState(tasks);
 
   function DeleteListItem(id) {
@@ -11,16 +11,19 @@ function TodoList() {
   }
 
   return (
-    <div className="TaskList">
+    <div className="ListItem">
       {task.map((oneTask) => {
+        const isCompleted = oneTask.completed; 
         return (
           <div key={oneTask.id}>
             <Link to={`/task/${oneTask.id}`}>
               <li>{oneTask.task}</li>
+              {isCompleted ? <div>✅</div> : <div>❌</div>}
             </Link>
             <button
-              onClick={ () => DeleteListItem(oneTask.id)}
-              className="delete-button">
+              onClick={() => DeleteListItem(oneTask.id)}
+              className="delete-button"
+            >
               Delete
             </button>
           </div>
@@ -31,4 +34,4 @@ function TodoList() {
 }
 
 
-export default TodoList;
+export default ListItem;
