@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Tasks from "../assets/tasks.json";
-// import tasksData from "../assets/tasks.json";
+import tasks from "../assets/tasks.json";
+
 import { Link } from "react-router-dom";
 
 function TodoList() {
   // const taskDetails = tasksData.find((task) => task._id === taskId);
-  const [task, setTask] = useState(Tasks);
+  const [task, setTask] = useState(tasks);
   return (
     <>
           {task.map((oneTask) => {

@@ -12,13 +12,15 @@ function App() {
   return (
     <>
       <Navbar />
-      <Sidebar />
-      <Routes>
-        <Route path="/" element={<DashboardPage />} />
-        <Route path="/task/:taskId" element={<ItemDetailsPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <div className="wrapper">
+        <Sidebar />
+        <Routes>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/task/:taskId" element={<ItemDetailsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </div>
       <Footer />
     </>
   );

@@ -1,8 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Sidebar() {
   return (
-    <div>Sidebar</div>
+      <div className='side-bar'>
+      sidebar
+      <Link to="/">Home</Link>
+      <Link to="/src/pages/AboutPage.jsx">About</Link>
+      </div>
   )
 }
 
