@@ -1,29 +1,34 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import tasks from "../assets/tasks.json";
-
 import { Link } from "react-router-dom";
 
 function TodoList() {
-  // const taskDetails = tasksData.find((task) => task._id === taskId);
   const [task, setTask] = useState(tasks);
+
+  function DeleteListItem(id) {
+    const newTaskList = task.filter((task) => task.id !== id);
+    setTask(newTaskList);
+  }
+
   return (
-    <>
-          {task.map((oneTask) => {
+    <div className="TaskList">
+      {task.map((oneTask) => {
         return (
-          oneTask.completed && (
-            <>
-              <Link to={`/task/${oneTask.id}`}><li>{oneTask.task}</li></Link>
-              <button
-                onClick={() => setTask((oneTask.completed = true))}
-                className="delete-button">
-                Delete Task
-              </button>
-            </>
-          )
+          <div key={oneTask.id}>
+            <Link to={`/task/${oneTask.id}`}>
+              <li>{oneTask.task}</li>
+            </Link>
+            <button
+              onClick={ () => DeleteListItem(oneTask.id)}
+              className="delete-button">
+              Delete
+            </button>
+          </div>
         );
       })}
-    </>
+    </div>
   );
 }
+
 
 export default TodoList;
