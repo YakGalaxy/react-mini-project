@@ -1,9 +1,9 @@
 [
-  { "id": "1", "item": "Read the project brief", "completed": true },
-  { "id": "2", "item": "Create a project repository", "completed": false },
-  { "id": "3", "item": "Create React application using Vite", "completed": false},
-  { "id": "4", "item": "Finish Day 1 Development items", "completed": false },
-  { "id": "5", "item": "Finish Day 1 Research items", "completed": false },
-  { "id": "6", "item": "Finish Day 2 Development items", "completed": false },
-  { "id": "7", "item": "Finish Day 2 Research Tasks", "completed": false }
+  { "id": 1, "item": "Read the project brief", "completed": true },
+  { "id": 2, "item": "Create a project repository", "completed": false },
+  { "id": 3, "item": "Create React application using Vite", "completed": false},
+  { "id": 4, "item": "Finish Day 1 Development items", "completed": false },
+  { "id": 5, "item": "Finish Day 1 Research items", "completed": false },
+  { "id": 6, "item": "Finish Day 2 Development items", "completed": false },
+  { "id": 7, "item": "Finish Day 2 Research Tasks", "completed": false }
 ]

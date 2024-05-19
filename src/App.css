@@ -56,7 +56,7 @@
   width: 100%;
 }
 
-.item-list p {
+.item-list a {
   max-width: 50%;
   min-width: 60%;
 }

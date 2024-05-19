@@ -1,24 +1,39 @@
-import React, { useState } from "react";
-import ItemData from "../assets/items.json";
-import { Link } from "react-router-dom";
+import React from "react";
 import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 
+function ItemDetailsPage({ items }) {
+  const { itemId } = useParams();
+  const item = items.find((item) => item.id === Number(itemId)); // Convert itemId to number
 
-function ItemDetailsPage() {
-  const { taskId } = useParams();
-  const [tasks, setTask] = useState(tasksData);
-  // const taskDetails = tasksData.find((task) => task._id === taskId);
+  if (!item) {
+    return <div>Item not found</div>;
+  }
 
   return (
     <div>
-      {/* {tasks.map((oneTask) => {
-        return (
-          <h4>{oneTask.task}</h4>
-        ); 
-      })}  */}
+      <h1>Item Details</h1>
+      <p>
+        <strong>ID:</strong> {item.id}
+      </p>
+      <p>
+        <strong>Item:</strong> {item.item}
+      </p>
+      <p>
+        <strong>Completed:</strong> {item.completed ? "Yes" : "No"}
+      </p>
     </div>
   );
 }
 
+ItemDetailsPage.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      item: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
+};
 
 export default ItemDetailsPage;
