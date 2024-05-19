@@ -1,8 +1,9 @@
-import React from "react";
+
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
+import EditItemForm from "../components/EditItemForm";
 
-function ItemDetailsPage({ items }) {
+function ItemDetailsPage({ items, onSave }) {
   const { itemId } = useParams();
   const item = items.find((item) => item.id === Number(itemId)); // Convert itemId to number
 
@@ -22,6 +23,9 @@ function ItemDetailsPage({ items }) {
       <p>
         <strong>Completed:</strong> {item.completed ? "Yes" : "No"}
       </p>
+
+      <h2>Edit Item</h2>
+      <EditItemForm item={item} onSave={onSave} />
     </div>
   );
 }
@@ -34,6 +38,7 @@ ItemDetailsPage.propTypes = {
       completed: PropTypes.bool.isRequired,
     })
   ).isRequired,
+  onSave: PropTypes.func.isRequired,
 };
 
 export default ItemDetailsPage;

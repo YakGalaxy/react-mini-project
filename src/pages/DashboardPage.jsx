@@ -1,4 +1,4 @@
-import React from "react";
+
 import List from "./List";
 
 function DashboardPage({ items, addItem, deleteItem, toggleCompleted }) {

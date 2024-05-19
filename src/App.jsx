@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import Navbar from "./components/Navbar.jsx";
@@ -8,7 +8,7 @@ import DashboardPage from "./pages/DashboardPage.jsx";
 import ItemDetailsPage from "./pages/ItemDetailsPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import itemsData from "./assets/items.json";
-import "./App.css";
+import "./App.css"; 
 
 function App() {
   const [items, setItems] = useState(itemsData);
@@ -38,6 +38,18 @@ function App() {
     );
   }
 
+  function updateItem(id, updatedItem) {
+    setItems(
+      items.map((item) => {
+        if (item.id === id) {
+          return { ...item, ...updatedItem };
+        } else {
+          return item;
+        }
+      })
+    );
+  }
+
   return (
     <>
       <Navbar />
@@ -57,7 +69,7 @@ function App() {
           />
           <Route
             path="/item/:itemId"
-            element={<ItemDetailsPage items={items} />}
+            element={<ItemDetailsPage items={items} onSave={updateItem} />}
           />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
