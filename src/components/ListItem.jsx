@@ -2,8 +2,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 function ListItem({ item, deleteItem, toggleCompleted }) {
-  console.log("ListItem received item:", item); // Log the item for debugging
-
   function handleChange() {
     toggleCompleted(item.id);
   }
@@ -17,7 +15,7 @@ function ListItem({ item, deleteItem, toggleCompleted }) {
         onChange={handleChange}
       />
       <Link to={`/item/${item.id}`}>
-        <p>{item.item}</p> {/* Ensure this uses `item.item` */}
+        <p>{item.item}</p>
       </Link>
       <button className="delete-button" onClick={() => deleteItem(item.id)}>
         X
