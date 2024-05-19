@@ -1,37 +1,30 @@
-import { useState } from "react";
-import tasks from "../assets/tasks.json";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function ListItem() {
-  const [task, setTask] = useState(tasks);
+function ListItem({ item, deleteItem, toggleCompleted }) {
+  console.log("ListItem received item:", item); // Log the item for debugging
 
-  function DeleteListItem(id) {
-    const newTaskList = task.filter((task) => task.id !== id);
-    setTask(newTaskList);
+  function handleChange() {
+    toggleCompleted(item.id);
   }
 
   return (
-    <div className="ListItem">
-      {task.map((oneTask) => {
-        const isCompleted = oneTask.completed; 
-        return (
-          <div key={oneTask.id}>
-            <Link to={`/task/${oneTask.id}`}>
-              <li>{oneTask.task}</li>
-              {isCompleted ? <div>✅</div> : <div>❌</div>}
-            </Link>
-            <button
-              onClick={() => DeleteListItem(oneTask.id)}
-              className="delete-button"
-            >
-              Delete
-            </button>
-          </div>
-        );
-      })}
+    <div className="list-item line-break">
+      <input className="checkbox-scaling" type="checkbox" checked={item.completed} onChange={handleChange} />
+      <p>{item.item}</p>
+      <button className="delete-button" onClick={() => deleteItem(item.id)}>X</button>
     </div>
   );
 }
+
+ListItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+    completed: PropTypes.bool.isRequired,
+  }).isRequired,
+  deleteItem: PropTypes.func.isRequired,
+  toggleCompleted: PropTypes.func.isRequired,
+};
 
 
 export default ListItem;

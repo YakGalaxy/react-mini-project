@@ -16,7 +16,7 @@ function App() {
         <Sidebar />
         <Routes>
           <Route path="/" element={<DashboardPage />} />
-          <Route path="/task/:taskId" element={<ItemDetailsPage />} />
+          <Route path="/item/:itemId" element={<ItemDetailsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

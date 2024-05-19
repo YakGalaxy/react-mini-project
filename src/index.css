@@ -14,13 +14,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  width: 100%;
+}
+
 *,
 *:before,
 *:after {
   box-sizing: inherit;
 }
 
-html {
+body {
   box-sizing: border-box;
   /* Establishes consistent box-sizing model across all elements
   i.e. including padding and border within an elements total width and height */
@@ -29,11 +33,14 @@ html {
   /* Ensures viewport is filled and helps to prevent unwanted margins or padding */
   font-size: 100%;
   /* Scales root font size against browser default */
-}
-
-body {
-    overflow-x: hidden;
+  overflow-x: hidden;
   /* Prevents content overflowing block-level element edges */
+  min-width: 360px;
+  min-height: 600px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 a {
@@ -43,7 +50,7 @@ a {
   text-decoration-style: double;
 }
 a:hover {
-  color: #5DE1C0;
+  color: #5de1c0;
 }
 
 /* body {
