@@ -4,6 +4,8 @@
   gap: 2.5%;
   align-items: center;
   border-bottom: 1vh solid #b1b1be;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -13,20 +15,24 @@
 .wrapper {
   display: flex;
   min-width: 360px;
+  max-width: 1000px;
+    margin: 0 auto;
 }
 
 .side-bar {
   display: flex;
   height: 100%;
-  width: 40%;
+  width: 50%;
   flex-flow: row wrap;
   row-gap: 0.5vh;
   padding-top: 2.5%;
-  padding-right: 5%;
+  padding-right: 2.5%;
+  max-width: 200px;
 }
 
 .side-bar a {
-  
+  background-color: #302375;
+  padding: 5% 10%;
 }
 
 .dashboard {
@@ -45,6 +51,27 @@
   row-gap: 1vh;
   margin-bottom: 4vh;
 }
+
+.item-details {
+    border-left: 1vh solid #b1b1be;
+    padding-left: 10%;
+    width: 100%;
+}
+
+.item-details form label {
+  padding-right: 2%;
+}
+
+.item-details input {
+  margin-bottom: 2vh;
+}
+
+.submit-button {
+    transform: scale(1.25);
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  margin-left: 0.5vw
+  }
 
 /* Individual Items */
 
@@ -84,13 +111,18 @@
 .footer {
   padding-top: 2vh;
   border-top: #b1b1be 1vh solid;
+  max-width: 1000px;
+    margin: 0 auto;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 690px) {
   .side-bar {
     display: none;
   }
   .dashboard {
+    border-left: none;
+  }
+  .item-details {
     border-left: none;
   }
 }

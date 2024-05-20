@@ -47,7 +47,7 @@ function EditItemForm({ item, onSave }) {
           onChange={handleChange}
         />
       </div>
-      <button type="submit">Save</button>
+      <button className="submit-button" type="submit">Save</button>
     </form>
   );
 }

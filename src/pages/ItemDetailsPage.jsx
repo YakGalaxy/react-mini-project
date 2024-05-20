@@ -12,7 +12,7 @@ function ItemDetailsPage({ items, onSave }) {
   }
 
   return (
-    <div>
+    <div className="item-details">
       <h1>Item Details</h1>
       <p>
         <strong>ID:</strong> {item.id}
